@@ -43,3 +43,9 @@ dependencies {
     compile "com.google.android.gms:play-services-location:$googlePlayServicesVersion"
     compile "com.google.maps.android:android-maps-utils:$androidMapsUtilsVersion"
 }
+
+// NOTE: Need to do this in order to work with RN 0.56.0
+// https://stackoverflow.com/questions/33317555/conflict-with-dependency-com-android-supportsupport-annotations-resolved-ver#comment65418749_33318482
+configurations.all {
+	resolutionStrategy.force 'com.android.support:support-v4:26.1.0'
+}
